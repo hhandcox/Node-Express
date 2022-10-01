@@ -1,6 +1,7 @@
 const express = require('express');
 const campsiteRouter = express.Router();
 
+//Campsite Route
 campsiteRouter.route('/')
 .all((req, res, next) => {
     res.statusCode = 200;
@@ -21,6 +22,7 @@ campsiteRouter.route('/')
     res.end('Deleting all campsites');
 });
 
+//Campsite Id Route
 campsiteRouter.route('/:campsitesId')
 .all((req, res, next) => {
     res.statusCode = 200;

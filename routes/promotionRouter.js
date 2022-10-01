@@ -1,6 +1,7 @@
 const express = require('express');
 const promotionRouter = express.Router();
 
+//Promotion Route
 promotionRouter.route('/')
 .all((req, res, next) => {
     res.statusCode = 200;
@@ -21,6 +22,7 @@ promotionRouter.route('/')
     res.end('Deleting all promotions');
 });
 
+//Promotion Id Route
 promotionRouter.route('/:promotionsId')
 .all((req, res, next) => {
     res.statusCode = 200;
