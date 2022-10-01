@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
+const partnerRouter = require('./routes/partnerRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -10,6 +12,13 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/campsites', campsiteRouter);
+app.use('/campsites/:campsiteId', campsiteRouter);
+//above I added but unsure about it.
+app.use('/promotions', promotionRouter);
+app.use('/promotions/:promotionId', promotionRouter);
+
+app.use('/partners', partnerRouter);
+app.use('/partners/:partnerId', partnerRouter);
 
 app.use(express.static(__dirname + '/public'));
 
